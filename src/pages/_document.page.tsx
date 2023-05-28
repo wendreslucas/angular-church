@@ -1,5 +1,5 @@
-import { getCssText } from "@ignite-ui/react";
-import { Head, Html, Main, NextScript } from "next/document";
+import { getCssText } from '@ignite-ui/react'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
@@ -11,10 +11,12 @@ export default function Document() {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
         <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+
         <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
@@ -25,5 +27,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }
