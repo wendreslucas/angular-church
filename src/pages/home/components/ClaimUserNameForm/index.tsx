@@ -4,6 +4,7 @@ import { Form } from './styles';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/router';
 
 const ClaimUsernameFormData = z.object({
 	username: z
@@ -18,6 +19,7 @@ const ClaimUsernameFormData = z.object({
 type ClaimUsernameFormData = z.infer<typeof ClaimUsernameFormData>;
 
 export function ClaimUsernameForm() {
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -27,7 +29,9 @@ export function ClaimUsernameForm() {
 	});
 
 	async function handleClaimUsername(data: ClaimUsernameFormData) {
-		console.log(data);
+		const { username } = data;
+
+		await router.push(`/register?username=${username}`);
 	}
 
 	return (
